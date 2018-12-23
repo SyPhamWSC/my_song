@@ -2,7 +2,6 @@ package com.uet.mysong2018.presentation.ui.activities;
 
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -21,7 +20,7 @@ import co.mobiwise.library.MusicPlayerView;
 
 public class NowPlayingActivity extends BaseActivity {
 
-    public static final String TAG ="NowPlayingActivity";
+    public static final String TAG = "NowPlayingActivity";
 
     @BindView(R.id.tv_name_song)
     TextView tvNameSong;
@@ -43,8 +42,7 @@ public class NowPlayingActivity extends BaseActivity {
         setContentView(R.layout.activity_now_playing);
 
         ButterKnife.bind(this);
-        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.vo_cung_phan_duy_anh);
-        Log.e(TAG, "onCreate: time song: " + mediaPlayer.getDuration() );
+
         initView();
 
         mvp.setOnClickListener(view -> {
@@ -63,6 +61,8 @@ public class NowPlayingActivity extends BaseActivity {
     }
 
     private void initView() {
+        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.vo_cung_phan_duy_anh);
+        Log.e(TAG, "onCreate: time song: " + mediaPlayer.getDuration());
 
         Utils.getInstance().setColorStatusBar(this,
                 ContextCompat.getColor(this, R.color.color_gray_status_bar));
@@ -71,6 +71,9 @@ public class NowPlayingActivity extends BaseActivity {
 
         mvp.setCoverDrawable(ivVocung);
         mvp.setAutoProgress(true);
+        mvp.setMax(mediaPlayer.getDuration()/1000);
+
+        Utils.getInstance().setFontBrushsbi(tvNameSong);
 
     }
 
