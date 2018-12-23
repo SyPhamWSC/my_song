@@ -18,11 +18,6 @@ public class MainActivity extends AppCompatActivity {
 
         btnPlayer = findViewById(R.id.btn_start);
 
-        btnPlayer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, NowPlayingActivity.class));
-            }
-        });
+        btnPlayer.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, NowPlayingActivity.class)));
     }
 }
