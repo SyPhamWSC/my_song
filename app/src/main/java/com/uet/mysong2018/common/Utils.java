@@ -53,4 +53,8 @@ public class Utils implements IUtils {
     public void setFontBrushsbi(TextView tv) {
         this.setCustomFonts("brushsbi", tv);
     }
+
+    public void setFontScripti(TextView tv) {
+        this.setCustomFonts("scripti", tv);
+    }
 }

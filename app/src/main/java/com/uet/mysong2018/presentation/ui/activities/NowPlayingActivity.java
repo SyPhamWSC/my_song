@@ -22,19 +22,6 @@ public class NowPlayingActivity extends BaseActivity {
 
     public static final String TAG = "NowPlayingActivity";
 
-    @BindView(R.id.tv_name_song)
-    TextView tvNameSong;
-
-    @BindView(R.id.tv_name_singer)
-    TextView tvNameSinger;
-
-    @BindView(R.id.mpv)
-    MusicPlayerView mvp;
-
-    @BindDrawable(R.drawable.vo_cung_phan_duy_anh)
-    Drawable ivVocung;
-
-    MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,39 +30,9 @@ public class NowPlayingActivity extends BaseActivity {
 
         ButterKnife.bind(this);
 
-        initView();
-
-        mvp.setOnClickListener(view -> {
-            if (Utils.isIsPlaying()) {
-                mvp.stop();
-                Utils.setIsPlaying(false);
-                mediaPlayer.pause();
-            } else {
-                Utils.setIsPlaying(true);
-                mediaPlayer.start();
-                mvp.start();
-            }
-        });
-
 
     }
 
-    private void initView() {
-        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.vo_cung_phan_duy_anh);
-        Log.e(TAG, "onCreate: time song: " + mediaPlayer.getDuration());
-
-        Utils.getInstance().setColorStatusBar(this,
-                ContextCompat.getColor(this, R.color.color_gray_status_bar));
-        enableToolBarIndicator();
-        setToolBarTitle(getResources().getString(R.string.str_now_playing));
-
-        mvp.setCoverDrawable(ivVocung);
-        mvp.setAutoProgress(true);
-        mvp.setMax(mediaPlayer.getDuration()/1000);
-
-        Utils.getInstance().setFontBrushsbi(tvNameSong);
-
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -1,23 +1,38 @@
 package com.uet.mysong2018;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 
-import com.uet.mysong2018.presentation.ui.activities.NowPlayingActivity;
+import com.chaychan.library.BottomBarLayout;
+import com.uet.mysong2018.presentation.adapters.ViewPagerAdapterCustom;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnPlayer;
+    @BindView(R.id.vp_content)
+    ViewPager vpContent;
+
+    @BindView(R.id.bottom_bar)
+    BottomBarLayout bottomBarLayout;
+
+    private PagerAdapter mPageAdapter = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnPlayer = findViewById(R.id.btn_start);
+        ButterKnife.bind(this);
 
-        btnPlayer.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, NowPlayingActivity.class)));
+        mPageAdapter = new ViewPagerAdapterCustom(getSupportFragmentManager());
+        vpContent.setAdapter(mPageAdapter);
+
+        bottomBarLayout.setViewPager(vpContent);
+        bottomBarLayout.setSmoothScroll(false);
     }
 }
