@@ -22,6 +22,8 @@
                 android:layout_height="wrap_content" />
 
             <EditText
+                android:id="@+id/edt_search"
+                android:background="@null"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textSize="16sp"
@@ -30,43 +32,76 @@
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
-
-    <TextView
-        android:layout_margin="10dp"
-        android:textColor="@android:color/black"
-        android:text="CÓ THỂ BẠN MUỐN NGHE "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textStyle="bold"/>
-
-    <android.support.v7.widget.CardView
-        android:layout_margin="10dp"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            android:src="@drawable/noel_music"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/ll_result_search"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_margin="10dp"
+                android:textColor="@android:color/black"
+                android:text="Kết quả tìm kiếm "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
 
-    </android.support.v7.widget.CardView>
+            <ListView
+                android:id="@+id/list_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
 
-    <android.support.v7.widget.CardView
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            android:src="@drawable/winter_music"
+        <LinearLayout
+            android:id="@+id/ll_default"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
 
-    </android.support.v7.widget.CardView>
+            <TextView
+                android:layout_margin="10dp"
+                android:textColor="@android:color/black"
+                android:text="CÓ THỂ BẠN MUỐN NGHE "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/noel_music"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/winter_music"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
 
 
 </LinearLayout>
