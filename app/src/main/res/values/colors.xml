@@ -6,7 +6,8 @@
     <color name="color_gray_status_bar">#37474f</color>
     <color name="anim_color">#f2f2f2</color>
 
-    <color name="color_bottom_tab_bg">#6C7B8B</color>
-    <color name="color_selected">#EB50AA</color>
+    <color name="color_bottom_tab_bg">#272C3D</color>
+    <color name="color_selected">#C4E677</color>
+    <color name="color_unselected">#7C999C</color>
     <color name="color_selector">#305bafa2</color>
 </resources>

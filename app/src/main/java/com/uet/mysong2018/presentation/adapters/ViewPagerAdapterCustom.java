@@ -15,6 +15,7 @@ public class ViewPagerAdapterCustom extends FragmentPagerAdapter {
     private BaseFragment searchFragment;
     private BaseFragment playMusicFragment;
     private BaseFragment meFragment;
+    private BaseFragment newsFragment;
 
     public ViewPagerAdapterCustom(FragmentManager fm) {
         super(fm);
@@ -22,6 +23,7 @@ public class ViewPagerAdapterCustom extends FragmentPagerAdapter {
         searchFragment = new SearchFragment();
         playMusicFragment = new PlayMusicFragment();
         meFragment = new MeFragment();
+        newsFragment = new BaseFragment();
     }
 
     @Override
@@ -37,6 +39,10 @@ public class ViewPagerAdapterCustom extends FragmentPagerAdapter {
                 break;
 
             case 2:
+                fragment = newsFragment;
+                break;
+
+            case 3:
                 fragment = meFragment;
                 break;
 
@@ -49,6 +55,6 @@ public class ViewPagerAdapterCustom extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
 }
