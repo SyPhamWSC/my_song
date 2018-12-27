@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import com.uet.mysong2018.presentation.ui.fragments.BaseFragment;
 import com.uet.mysong2018.presentation.ui.fragments.MeFragment;
+import com.uet.mysong2018.presentation.ui.fragments.NewsFagment;
 import com.uet.mysong2018.presentation.ui.fragments.PlayMusicFragment;
 import com.uet.mysong2018.presentation.ui.fragments.SearchFragment;
 
@@ -23,7 +24,7 @@ public class ViewPagerAdapterCustom extends FragmentPagerAdapter {
         searchFragment = new SearchFragment();
         playMusicFragment = new PlayMusicFragment();
         meFragment = new MeFragment();
-        newsFragment = new BaseFragment();
+        newsFragment = new NewsFagment();
     }
 
     @Override

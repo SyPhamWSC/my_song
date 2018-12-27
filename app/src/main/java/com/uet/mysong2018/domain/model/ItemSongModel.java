@@ -49,4 +49,12 @@ public class ItemSongModel implements Serializable {
     public void setNameImage(String nameImage) {
         this.nameImage = nameImage;
     }
+
+    public String getNameSongRaw() {
+        return nameSongRaw;
+    }
+
+    public void setNameSongRaw(String nameSongRaw) {
+        this.nameSongRaw = nameSongRaw;
+    }
 }

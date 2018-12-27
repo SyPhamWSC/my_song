@@ -16,15 +16,18 @@ import java.util.List;
 public class CommonVLs {
 
     private static ItemSongModel vocung = new ItemSongModel("Vô Cùng","Phan Duy Anh",
-            "5:28","vo_cung_phan_duy_anh","vo_cung_phan_duy_anh.mp3");
+            "5:28","vo_cung_phan_duy_anh","vo_cung_phan_duy_anh");
     private static ItemSongModel votinh = new ItemSongModel("Vô Tình","Xesi x Hoaprox",
-            "4:34","vo_tinh","vo_tinh.mp3");
+            "4:34","vo_tinh","vo_tinh");
+    private static ItemSongModel yeuanhemnhe = new ItemSongModel("Yêu Anh Em Nhé","HuyR ft Tùng Viu",
+            "5:35","yeu_anh_em_nhe","yeu_anh_em_nhe");
 
     private static List<ItemSongModel> listSong = new ArrayList<>();
 
     public static void initListSong(){
         listSong.add(vocung);
         listSong.add(votinh);
+        listSong.add(yeuanhemnhe);
     }
 
     public static List<ItemSongModel> getListSong() {
