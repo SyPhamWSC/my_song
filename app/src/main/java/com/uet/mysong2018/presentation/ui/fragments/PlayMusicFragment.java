@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.taishi.library.Indicator;
 import com.uet.mysong2018.R;
 import com.uet.mysong2018.common.Utils;
 
@@ -41,6 +42,9 @@ public class PlayMusicFragment extends BaseFragment {
 
     @BindView(R.id.rl_next)
     RelativeLayout rlNext;
+
+    @BindView(R.id.indicator)
+    Indicator indicator;
 
     @BindDrawable(R.drawable.vo_cung_phan_duy_anh)
     Drawable ivVocung;

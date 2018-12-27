@@ -108,5 +108,7 @@
         </RelativeLayout>
     </LinearLayout>
 
+    <include layout="@layout/item_song_playing"/>
+
 
 </LinearLayout>
